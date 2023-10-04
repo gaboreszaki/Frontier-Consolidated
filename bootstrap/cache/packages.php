@@ -1,27 +1,9 @@
 <?php return array (
-  'jenssegers/agent' => 
+  'laravel/breeze' => 
   array (
     'providers' => 
     array (
-      0 => 'Jenssegers\\Agent\\AgentServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Agent' => 'Jenssegers\\Agent\\Facades\\Agent',
-    ),
-  ),
-  'laravel/fortify' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Fortify\\FortifyServiceProvider',
-    ),
-  ),
-  'laravel/jetstream' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Jetstream\\JetstreamServiceProvider',
+      0 => 'Laravel\\Breeze\\BreezeServiceProvider',
     ),
   ),
   'laravel/sail' => 
@@ -45,6 +27,13 @@
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
+  'laravel/ui' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Ui\\UiServiceProvider',
+    ),
+  ),
   'livewire/livewire' => 
   array (
     'providers' => 
@@ -54,6 +43,13 @@
     'aliases' => 
     array (
       'Livewire' => 'Livewire\\Livewire',
+    ),
+  ),
+  'livewire/volt' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Livewire\\Volt\\VoltServiceProvider',
     ),
   ),
   'nesbot/carbon' => 

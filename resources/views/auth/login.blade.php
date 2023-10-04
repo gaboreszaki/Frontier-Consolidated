@@ -1,48 +1,41 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+@extends('components.layouts.auth')
 
-        <x-validation-errors class="mb-4" />
+@section('content')
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
+        {{--        <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">--}}
+        <h1 class="h3 mb-3 fw-normal">FRCN Site Admin</h1>
+
+        <div class="form-floating">
+            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder="name@example.com" value="{{ old('email') }}" required autocomplete="email" autofocus>
+            <label for="floatingInput">{{ __('Email Address') }}</label>
+            @error('email')
+                <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+            @enderror
+        </div>
+        <div class="form-floating">
+            <input type="password" name="password" class="form-control  @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password" required autocomplete="current-password">
+            <label for="floatingPassword">{{ __('Password') }}</label>
+            @error('password')
+                <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+            @enderror
+        </div>
+
+        <div class="form-check text-start my-3">
+            <input name="remember" class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault" {{ old('remember') ? 'checked' : '' }}>
+            <label class="form-check-label" for="flexCheckDefault">
+                {{ __('Remember Me') }}
+            </label>
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit">{{ __('Login') }}</button>
+        @if (Route::has('password.request'))
+            <a class="btn btn-link" href="{{ route('password.request') }}">
+                {{ __('Forgot Your Password?') }}
+            </a>
         @endif
+        <p class="mt-5 mb-3 text-body-secondary text-center">Frontier Consolidated© 2020–2023</p>
+    </form>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+@endsection
 
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
