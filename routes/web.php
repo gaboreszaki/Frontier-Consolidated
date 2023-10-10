@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AfterEventReportController;
 use App\Http\Controllers\Admin\NewsController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,7 @@ Route::view('/', 'main');
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(function () {
     Route::view('/', 'admin')->name('admin');
     Route::resource('/news', NewsController::class);
+    Route::resource('/reports', AfterEventReportController::class);
 });
 
 Auth::routes();

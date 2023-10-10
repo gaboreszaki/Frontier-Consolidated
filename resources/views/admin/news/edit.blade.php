@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <label>Content</label>
-                <textarea id="tmce" name="content">{{$news->content}}</textarea>
+                <textarea class="tmce" id="news_content" name="content">{{$news->content}}</textarea>
             </div>
             <div class="card-footer text-end">
                 <button type="submit" class="btn btn-primary">Save</button>

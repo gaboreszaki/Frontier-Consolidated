@@ -2,15 +2,29 @@
 
 --- 
 
-## Planned Pages/features:
-- [ ] News & announcements
-- [ ] Activities 
+## Planned Pages/features 
+
+---
+
+__Visitor/Guest__
+
+- [ ] News & Announcements
+- [ ] Activities
 - [ ] Community 
 - [ ] Organisation
 - [ ] Guides and resources
+
 ---
-- [ ] Admin page
-- [ ] Login 
+__Admin__
+- [ ] Authentication and password services
+- [ ] Admin panel v0.1
+- [ ] CRUD - News 
+- [ ] CRUD - Reports
+- [ ] CRUD - Events
+- [ ] CRUD - Guides
+- [ ] File upload manager
+- [ ] Static page content Generator (low priority)
+
 
 ### News & announcements
 A place to communicate news to the public
