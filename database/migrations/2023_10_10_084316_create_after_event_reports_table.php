@@ -19,7 +19,8 @@ return new class extends Migration
             $table->text('op_summary');
             $table->text('op_went_well');
             $table->text('op_can_be_improved');
-            $table->string('op_cover_img');
+            $table->string('op_cover_img')->nullable();
+            $table->string('author');
             $table->timestamps();
         });
     }

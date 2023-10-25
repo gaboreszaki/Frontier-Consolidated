@@ -17,6 +17,7 @@ class AfterEventReport extends Model
             'op_summary',
             'op_went_well',
             'op_can_be_improved',
-            'op_cover_img'
+            'op_cover_img',
+            'author'
         ];
 }

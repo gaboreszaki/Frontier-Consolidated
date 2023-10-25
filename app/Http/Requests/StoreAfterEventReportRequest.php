@@ -11,7 +11,7 @@ class StoreAfterEventReportRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class StoreAfterEventReportRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|string|max:255|min:3',
+            'op_leader' => 'required|string',
+            'op_date' => 'date',
+            'op_summary' => 'required|string',
+            'op_went_well' => 'required|string',
+            'op_can_be_improved' => 'required|string',
         ];
     }
 }
