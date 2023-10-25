@@ -5,7 +5,7 @@
 
 
     </div>
-    <h2>News create page</h2>
+    <h2>Create News or Announcement</h2>
     <hr>
 
     <form action="/admin/news" method="post">
@@ -20,10 +20,7 @@
 
                 </div>
                 <label>Content</label>
-
-
-
-                <textarea id="tmce" name="content"></textarea>
+                <textarea class="tmce" id="news_content" name="content"></textarea>
 
             </div>
             <div class="card-footer text-end">

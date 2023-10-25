@@ -26,7 +26,14 @@
             </li>
 
             <li>
-                <a href="#" class="nav-link">Activities </a>
+                <a class="nav-link" data-bs-toggle="collapse" href="#activities" role="button" aria-expanded="false" aria-controls="activities">Activities</a>
+                <div class="collapse multi-collapse" id="activities">
+                    <ul>
+                        <li class="nav-item"><a href="{{route('admin.reports.index')}}" class="nav-link">Event Reports</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Regular Events</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="nav-link"> </a>
             </li>
         </ul>
         <hr>

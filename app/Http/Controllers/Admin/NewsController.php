@@ -69,7 +69,8 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update( UpdateNewsRequest $request, News $news ): RedirectResponse {
+    public function update( UpdateNewsRequest $request, News $news ): RedirectResponse
+    {
 
 
         $this->newsService->updateNews(

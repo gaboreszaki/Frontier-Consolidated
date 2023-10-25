@@ -1,3 +1,3 @@
 <form method="post">
-    <textarea id="tmce"></textarea>
+    <textarea id="tmce_test"></textarea>
 </form>

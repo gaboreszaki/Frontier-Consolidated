@@ -6,7 +6,7 @@ use App\Models\News;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class NewsPolicy
+class AfterEventReportPolicy
 {
     /**
      * Determine whether the user can view any models.
