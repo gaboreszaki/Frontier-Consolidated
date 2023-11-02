@@ -10,11 +10,7 @@
         <div class="card shadow-md">
             <div class="card-body ">
 
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        Error with inputs
-                    </div>
-                @endif
+                <x-forms.alert-display-error-list :errors="$errors"/>
                 <div class="row">
                 <div class="col-8">
                     <div class="form-floating mb-3">
