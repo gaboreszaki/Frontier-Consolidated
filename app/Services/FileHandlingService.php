@@ -21,8 +21,10 @@
         }
         public function processImageByType($type, $fileName)
         {
-
             
+            if (!$fileName) {
+                return null;
+            }
 
             
             /////////
@@ -37,7 +39,15 @@
                     $this->processFile($fileName, $folderName, $width, $height, $quality);
                     
                     return $fileName;
+                case 'fullWidth':
                     
+                    $width = 800;
+                    $height = null;
+                    $quality = 80;
+                    $folderName = "fullWidth";
+                    $this->processFile($fileName, $folderName, $width, $height, $quality);
+                    
+                    return $fileName;
                     
                 case 'card':
                     $width = null;

@@ -6,4 +6,6 @@
   </div>
 </div>
 
+  <x-public.event-reports-list-display />
+
 </x-layouts.clean>
