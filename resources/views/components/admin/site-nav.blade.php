@@ -5,17 +5,17 @@
         </a>
         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link disabled">
                     Dashboard
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#staticPageItems" role="button" aria-expanded="false" aria-controls="staticPageItems">Static Pages</a>
+                <a class="nav-link disabled" data-bs-toggle="collapse" href="#staticPageItems" role="button" aria-expanded="false" aria-controls="staticPageItems">Static Pages</a>
                 <div class="collapse multi-collapse" id="staticPageItems">
                     <ul>
-                        <li class="nav-item"><a href="#" class="nav-link">Community</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Organisation</a></li>
+                        <li class="nav-item disabled"><a href="#" class="nav-link">Community</a></li>
+                        <li class="nav-item disabled"><a href="#" class="nav-link">Organisation</a></li>
                     </ul>
                 </div>
 
@@ -30,10 +30,9 @@
                 <div class="collapse multi-collapse" id="activities">
                     <ul>
                         <li class="nav-item"><a href="{{route('admin.reports.index')}}" class="nav-link">Event Reports</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Regular Events</a></li>
+                        <li class="nav-item "><a href="#" class="nav-link disabled">Regular Events</a></li>
                     </ul>
                 </div>
-                <a href="#" class="nav-link"> </a>
             </li>
         </ul>
         <hr>

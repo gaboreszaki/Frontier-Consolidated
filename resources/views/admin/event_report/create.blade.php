@@ -5,7 +5,7 @@
     </div>
     <h2>Create Event Report</h2>
     <hr>
-    <form action="/admin/reports" method="post" class="needs-validation" novalidate>
+    <form action="/admin/reports" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
         @csrf
         <div class="card shadow-md">
             <div class="card-body ">
@@ -42,7 +42,10 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="form-floating mb-3">
-                            <input type="file" class="form-control @error('op_cover_img') is-invalid @enderror" id="op_image_url" placeholder="Operation Thumbnail" name="op_cover_img" value="{{ old('op_cover_img') }}">
+                            <input type="file" class="form-control @error('op_cover_img') is-invalid @enderror" id="op_cover_img" placeholder="Operation Thumbnail" name="op_cover_img" value="{{ old('op_cover_img') }}">
+
+
+
                             <label for="op_cover_img">Thumbnail - TODO: add image Uploader</label>
                             @error('op_cover_img')
                             <div class="invalid-feedback">{{ $message }}</div>

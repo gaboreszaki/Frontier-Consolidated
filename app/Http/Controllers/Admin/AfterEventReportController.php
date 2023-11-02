@@ -7,6 +7,8 @@ use App\Http\Requests\StoreAfterEventReportRequest;
 use App\Http\Requests\UpdateAfterEventReportRequest;
 use App\Models\AfterEventReport;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class AfterEventReportController extends Controller
@@ -33,10 +35,28 @@ class AfterEventReportController extends Controller
      */
     public function store(StoreAfterEventReportRequest $request) :RedirectResponse
     {
+
+
+
         $valid = $request->validated();
         $valid['author'] = 'admin_user'; ///Todo: replace user with authed user
 
 
+//        dd(isset($request->op_cover_img));
+
+        /// Check
+
+
+        /// If We have an image lets store it
+         $file = $request->file('op_cover_img');
+        if ($file){
+            $name = $file->hashName();
+
+
+            $path = Storage::put("public/thumbnails", $request->file('op_cover_img'));
+
+            $valid['op_cover_img'] = "thumbnails/".$name;
+        }
 
         AfterEventReport::create($valid);
 
@@ -72,6 +92,11 @@ class AfterEventReportController extends Controller
 
         $valid = $request->validated();
 
+        /// Check and process image:
+
+
+
+        /// Store Record
         $report->updateOrCreate(
             [
                 'id' => $report['id']
