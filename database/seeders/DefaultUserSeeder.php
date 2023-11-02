@@ -13,7 +13,7 @@ class DefaultUserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()
-            ->create(["name" => "NorthAce", "email" => "test@test.ie"]);
+        User::factory()->create(["name" => "NorthAce", "email" => "northAce@test.com"]);
+        User::factory()->create(["name" => "LoudGuns", "email" => "loudGuns@test.com"]);
     }
 }
