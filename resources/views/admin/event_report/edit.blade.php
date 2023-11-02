@@ -3,7 +3,7 @@
     <div class="float-end">
         <a href="{{route('admin.reports.index')}}">Back to reports</a>
     </div>
-    <h2>Edit Event Report</h2>
+    <h2>Edit Event Report - {{$report->title}}</h2>
     <hr>
 
     <form action="{{route('admin.reports.update', ['report' => $report])}}" method="post" class="needs-validation" novalidate>
