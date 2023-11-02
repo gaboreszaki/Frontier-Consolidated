@@ -54,7 +54,11 @@ class AfterEventReportController extends Controller
 
 
         /// If We have an image lets store it
-        $valid['op_cover_img'] = $this->fileHandlingService->store('thumbnail',$request->file('op_cover_img') );
+        $fileName = $this->fileHandlingService->storeOriginal($request->file('op_cover_img'));
+        $this->fileHandlingService->processImageByType('thumbnail', $fileName);
+        $this->fileHandlingService->processImageByType('card', $fileName);
+        
+        $valid['op_cover_img'] = $fileName;
 //         $file = $request->file('op_cover_img');
 //        if ($file){
 //            $name = $file->hashName();
