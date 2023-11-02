@@ -14,6 +14,8 @@
         <div class="col-2">
             @isset($item->op_cover_img)
                 <img src="{{asset("storage/".$item->op_cover_img) }}" class="img-fluid img-thumbnail my-3 mx-2" alt="thumbnail">
+            @else
+            <x-tools.image-placeholder/>
             @endisset
 
 
