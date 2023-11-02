@@ -13,7 +13,7 @@
             <div class="col-2">
                 <div class="card shadow mb-3">
                     @isset($report->op_cover_img)
-                        <img src="{{asset("storage/".$report->op_cover_img) }}" class="card-img-top" alt="thumbnail">
+                        <img src="{{asset("storage/thumbnails/".$report->op_cover_img) }}" class="img-fluid rounded shadow" alt="thumbnail">
                     @endisset
                 </div>
                   <div class="card-body">

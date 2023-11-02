@@ -27,7 +27,8 @@ class UpdateAfterEventReportRequest extends FormRequest
             'op_date' => 'date',
             'op_summary' => 'required|string',
             'op_went_well' => 'required|string',
-            'op_can_be_improved' => 'required|string',
+            'op_cover_img' => 'image|mimes:png,jpg,jpeg|max:12288',
+            'op_can_be_improved' => 'required|string'
         ];
     }
 }
