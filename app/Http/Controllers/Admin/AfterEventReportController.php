@@ -10,9 +10,15 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
+use App\Services\FileHandlingService;
 
 class AfterEventReportController extends Controller
 {
+    
+    public function __construct(public FileHandlingService $fileHandlingService)
+    {
+    }
+    
     /**
      * Display a listing of the resource.
      */
@@ -48,15 +54,14 @@ class AfterEventReportController extends Controller
 
 
         /// If We have an image lets store it
-         $file = $request->file('op_cover_img');
-        if ($file){
-            $name = $file->hashName();
-
-
-            $path = Storage::put("public/thumbnails", $request->file('op_cover_img'));
-
-            $valid['op_cover_img'] = "thumbnails/".$name;
-        }
+        $valid['op_cover_img'] = $this->fileHandlingService->store('thumbnail',$request->file('op_cover_img') );
+//         $file = $request->file('op_cover_img');
+//        if ($file){
+//            $name = $file->hashName();
+//            Storage::put("public/thumbnails", $request->file('op_cover_img'));
+//
+//            $valid['op_cover_img'] = "thumbnails/".$name;
+//        }
 
         AfterEventReport::create($valid);
 
