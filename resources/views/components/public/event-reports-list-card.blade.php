@@ -1,6 +1,6 @@
 <div class="card" >
 @if($report->op_cover_img)
-    <img src="{{asset('storage/card/'.$report->op_cover_img)}}" class="card-img-top" alt="{{$report->title}}">
+    <img src="{{asset('storage/cards/'.$report->op_cover_img)}}" class="card-img-top" alt="{{$report->title}}">
     @else
     <x-tools.image-placeholder/>
     @endif
