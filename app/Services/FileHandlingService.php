@@ -16,7 +16,7 @@
             
             $name = $file->hashName();
             //store Original:
-            Storage::put("public/original", $file);
+            Storage::put("public/originals", $file);
             return  $name;
         }
         public function processImageByType($type, $fileName)
@@ -44,7 +44,7 @@
                     $width = 800;
                     $height = null;
                     $quality = 80;
-                    $folderName = "fullWidth";
+                    $folderName = "fullWidths";
                     $this->processFile($fileName, $folderName, $width, $height, $quality);
                     
                     return $fileName;
@@ -53,7 +53,7 @@
                     $width = null;
                     $height = 300;
                     $quality = 80;
-                    $folderName = "card";
+                    $folderName = "cards";
                     $this->processFile($fileName, $folderName, $width, $height, $quality);
                     
                     return $fileName;
@@ -69,12 +69,55 @@ return null;
             ?int $height,
             $quality
         ) {
-            $img = Image::make('storage/original/'.$fileName);
+            
+//            dump("processing file: $fileName");
+//            dump("folder: $saveFolder");
+            
+//            $file = Storage::disk('public')->get("original/$fileName");
+            
+            
+            $img = Image::make(Storage::disk('public')->get("originals/".$fileName));
             $img->resize($width, $height, function ($constraint) {
                 $constraint->aspectRatio();
             });
             
             $img->save(public_path("storage/$saveFolder/$fileName"), $quality);
         }
+        
+        public function removeFile($fileName)
+        {
+            
+            if (!$fileName){
+                return null;
+            }
+            
+            $this->removeFileFromDirectory($fileName,'originals');
+            $this->removeFileFromDirectory($fileName,'thumbnails');
+            $this->removeFileFromDirectory($fileName,'cards');
+            
+            
+        }
+        private function removeFileFromDirectory($fileName, $folder){
+            
+            try {
+                // Validate the value...
+//                dump('Removing files stating with file: $filename');
+                $url = "$folder/$fileName";
+//                dump($url);
+                if (Storage::disk('public')->get($url)){
+//                    dump('hit');
+                    Storage::disk('public')->delete($url);
+                }
+               
+                return true;
+                
+            } catch (Throwable $e) {
+                report($e);
+                
+                return false;
+            }
+            
+            
+    }
         
     }
