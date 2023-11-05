@@ -1,0 +1,17 @@
+
+
+
+.floating-title{
+  position: absolute;
+  display: block;
+  background: rgb(2,0,36);
+  background: linear-gradient(45deg, rgba(9,9,9,0.9) 0%, rgba(9,9,9,0.8) 35%, rgba(9,9,9,0.1) 100%);
+  top: 60%;
+
+  padding: 10px 15px 10px 10px;
+  border-radius: 0px 0px 10px 0px;
+  //border:2px solid rgba(9,9,9,0.5);
+  //border-left: 10px solid rgba(9,9,9,0.9);
+
+  h5 {margin-left: 0px}
+}

@@ -43,13 +43,29 @@
 
                 <div class="row">
                     <div class="col-8">
-                        <div class="form-floating mb-3">
+
+                            @if( $report->op_cover_img )
+                            <div class="row">
+                                <div class="col-8">
+                                {{  $report->op_cover_img  }}
+                                </div>
+                                <div class="col-4 text-end">
+                                    <a href="" class="btn btn-danger">delete image</a>
+                                </div>
+                            </div>
+
+
+                            @else
+                            <div class="form-floating mb-3">
+                                @error('op_cover_img')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             <input type="file" class="form-control @error('op_cover_img') is-invalid @enderror" id="op_image_url" placeholder="Operation Thumbnail" name="op_cover_img" value="{{ $report->op_cover_img }}">
                             <label for="op_cover_img">Thumbnail - TODO: add image Uploader</label>
-                            @error('op_cover_img')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
+                            </div>
+                            @endif
+
+
                         </div>
                     <div class="col-4">
 
