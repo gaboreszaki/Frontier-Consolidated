@@ -38,8 +38,12 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="form-floating mb-3">
-                            <input type="file" class="form-control @error('op_cover_img') is-invalid @enderror" id="op_cover_img" placeholder="Operation Thumbnail" name="op_cover_img" value="{{ old('op_cover_img') }}">
+                            @if( old('op_cover_img'))
+                            {{old('op_cover_img')}}
 
+                            @else
+                            <input type="file" class="form-control @error('op_cover_img') is-invalid @enderror" id="op_cover_img" placeholder="Operation Thumbnail" name="op_cover_img" value="{{ old('op_cover_img') }}">
+                            @endif
 
 
                             <label for="op_cover_img">Thumbnail - TODO: add image Uploader</label>
