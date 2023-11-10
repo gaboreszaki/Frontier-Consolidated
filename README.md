@@ -9,6 +9,7 @@ __Visitor/Guest__
 - [ ] Community 
 - [ ] Organisation
 - [ ] Guides and resources
+- [ ] Event reports
 
 ---
 __Admin__

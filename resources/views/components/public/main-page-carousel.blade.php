@@ -1,3 +1,4 @@
+{{--todo: replace examle carousel with correct data--}}
 <div id="carouselExample" class="carousel slide shadow-lg">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -7,14 +8,14 @@
 
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{Vite::asset('resources/images/carousel/join_bg.png')}}" class="d-block w-100" alt="join us">
+            <img src="{{asset('images/carousel/join_bg.png')}}" class="d-block w-100" alt="join us">
 
         </div>
         <div class="carousel-item">
-            <img src="{{Vite::asset('resources/images/carousel/join_bg.png')}}" class="d-block w-100" alt="...">
+            <img src="{{asset('images/carousel/join_bg.png')}}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="{{Vite::asset('resources/images/carousel/join_bg.png')}}" class="d-block w-100" alt="...">
+            <img src="{{asset('images/carousel/join_bg.png')}}" class="d-block w-100" alt="...">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

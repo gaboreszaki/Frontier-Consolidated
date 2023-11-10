@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AfterEventReportController;
 use App\Http\Controllers\Admin\NewsController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +22,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
     Route::resource('/reports', AfterEventReportController::class);
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 //Route::view('dashboard', 'dashboard')
 //    ->middleware(['auth', 'verified'])
