@@ -4,9 +4,10 @@
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
-        {{--        <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">--}}
-        <h1 class="h3 mb-3 fw-normal">FRCN Site Admin</h1>
-
+        <div class="text-center">
+        <img class="mb-4 me-3 d-inline" src="{{Vite::asset('resources/images/frcn_main_logo.png')}}" alt="Frontier Consolidated Logo" height="57">
+        <h1 class="h3 mb-3 fw-normal d-inline">FRCN Site Admin</h1>
+        </div>
         <div class="form-floating">
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput" placeholder="name@example.com" value="{{ old('email') }}" required autocomplete="email" autofocus>
             <label for="floatingInput">{{ __('Email Address') }}</label>
@@ -29,10 +30,13 @@
             </label>
         </div>
         <button class="btn btn-primary w-100 py-2" type="submit">{{ __('Login') }}</button>
+
         @if (Route::has('password.request'))
+            <div class="text-end">
             <a class="btn btn-link" href="{{ route('password.request') }}">
                 {{ __('Forgot Your Password?') }}
             </a>
+            </div>
         @endif
         <p class="mt-5 mb-3 text-body-secondary text-center">Frontier Consolidated© 2020–2023</p>
     </form>
