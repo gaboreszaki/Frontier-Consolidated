@@ -5,7 +5,7 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <div class="text-center">
-        <img class="mb-4 me-3 d-inline" src="{{Vite::asset('resources/images/frcn_main_logo.png')}}" alt="Frontier Consolidated Logo" height="57">
+        <img class="mb-4 me-3 d-inline" src="{{ asset('images/frcn_main_logo.png')}}" alt="Frontier Consolidated Logo" height="57">
         <h1 class="h3 mb-3 fw-normal d-inline">FRCN Site Admin</h1>
         </div>
         <div class="form-floating">
