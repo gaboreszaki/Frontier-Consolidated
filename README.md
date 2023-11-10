@@ -1,10 +1,6 @@
 # FRCN - Frontier Consolidated Official Website
 
---- 
-
 ## Planned Pages/features 
-
----
 
 __Visitor/Guest__
 
@@ -17,9 +13,9 @@ __Visitor/Guest__
 ---
 __Admin__
 - [ ] Authentication and password services
-- [ ] Admin panel v0.1
-- [ ] CRUD - News 
-- [ ] CRUD - Reports
+- [x] Admin panel v0.1
+- [x] CRUD - News 
+- [x] CRUD - Reports
 - [ ] CRUD - Events
 - [ ] CRUD - Guides
 - [ ] File upload manager
