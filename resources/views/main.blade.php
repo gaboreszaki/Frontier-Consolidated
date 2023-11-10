@@ -1,11 +1,10 @@
-<x-layouts.clean>
-<div class="card shadow-md">
-  <div class="card-body ">
-    <h5 class="card-title">Test card</h5>
-    <p class="card-text">test card content</p>
-  </div>
-</div>
+<x-layouts.guest>
 
-  <x-public.event-reports-list-display />
 
-</x-layouts.clean>
+    <x-public.main-page-carousel/>
+
+    <x-public.main-menu/>
+
+    <x-public.event-reports-list-display />
+
+</x-layouts.guest>
