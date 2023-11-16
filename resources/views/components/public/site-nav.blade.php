@@ -7,5 +7,6 @@
     <ul class="nav nav-pills text-uppercase pt-1 pe-0 fs-6">
         <li class="nav-item secondary"><a href="#" class="nav-link link-secondary ">About us</a></li>
         <li class="nav-item secondary"><a href="#" class="nav-link link-secondary">Merch store</a></li>
+        <li class="nav-item secondary"><a href="#" class="nav-link link-secondary"><i class="bi bi-discord"></i> Discord</a></li>
     </ul>
 </header>
