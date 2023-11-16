@@ -1,5 +1,5 @@
 {{--todo: replace examle carousel with correct data--}}
-<div id="carouselExample" class="carousel slide shadow-lg">
+<div id="carouselExample" class="carousel slide shadow-lg d-none d-sm-block mb-3">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
