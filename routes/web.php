@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::view('/', 'main');
+Route::view('/community', 'community');
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(function () {
     Route::view('/', 'admin')->name('admin');
     Route::resource('/news', NewsController::class);
