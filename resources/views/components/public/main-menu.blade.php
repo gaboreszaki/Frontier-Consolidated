@@ -19,7 +19,7 @@
     <div class="col-sm-12 col-md-3 mb-3 ">
 
         <div class="item">
-            <a href="#" class="link-primary text-white text-decoration-none">
+            <a href="community" class="link-primary text-white text-decoration-none">
                 <img src="{{asset('images/nav-images/community.png')}}" class="img-fluid" alt="community menu image">
                 <div class="label">
                     Community

@@ -18,11 +18,11 @@ class AfterEventReportFactory extends Factory
     {
         return [
             'title' => fake()->text(50),
-            'op_leader' => fake()->text(50),
+            'op_leader' => fake()->text(20),
             'op_date' => fake()->date(),
-            'op_summary' => fake()->realTextBetween(200, 5000),
-            'op_went_well' => fake()->paragraphs(),
-            'op_can_be_improved' => fake()->paragraphs(),
+            'op_summary' => fake()->paragraph(),
+            'op_went_well' => fake()->paragraph(),
+            'op_can_be_improved' => fake()->paragraph(),
             'op_cover_img' => null,
             'author' => fake()->text(50)
             
