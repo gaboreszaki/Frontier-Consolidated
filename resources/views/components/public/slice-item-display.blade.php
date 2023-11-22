@@ -1,36 +1,19 @@
-    <div class="row mb-3 border border-1 border-gray-800">
+<div class="row mb-3 border border-1 border-gray-800">
 
-        {{-- Todo: create a more elegant solution --}}
+    @dump($item->layout)
+    {{-- Todo: create a more elegant solution --}}
+    <figure class="image">
 
-
-        {{--LEFT--}}
-        @if($item->layout === "left")
-            <div class="col-5 p-5">
-                <h3>{{$item->title}}</h3>
-                <div>{{$item->content}}</div>
-            </div>
-            <div class="col-7"></div>
-        @endif
+        <img class="img-fluid " src="{{url('images/temp/'.$item->background_image)}}" alt="background-test">
 
 
-        {{--RIGHT--}}
-        @if($item->layout === "right")
-            <div class="col-7"></div>
-            <div class="col-5">
-                <h3>{{$item->title}}</h3>
-                <div>{{$item->content}}</div>
+            <div class="figcaption {{$item->layout}} ">
+                <div class="indicator">
+                    <h2>{{$item->title}}</h2>
+                    <div>{{$item->content}}</div>
+                </div>
             </div>
 
-        @endif
 
-        {{--CENTER--}}
-        @if($item->layout === "center")
-            <div class="col-6 offset-md-3" >
-                <h3>{{$item->title}}</h3>
-                <div>{{$item->content}}</div>
-            </div>
-
-        @endif
-
-
-    </div>
+    </figure>
+</div>

@@ -16,6 +16,9 @@ class AfterEventReportFactory extends Factory
      */
     public function definition(): array
     {
+
+        
+        
         return [
             'title' => fake()->text(50),
             'op_leader' => fake()->text(20),
@@ -23,7 +26,7 @@ class AfterEventReportFactory extends Factory
             'op_summary' => fake()->paragraph(),
             'op_went_well' => fake()->paragraph(),
             'op_can_be_improved' => fake()->paragraph(),
-            'op_cover_img' => null,
+            'op_cover_img' => fake()->randomElement(config('tmp_images.images')),
             'author' => fake()->text(50)
             
         ];
