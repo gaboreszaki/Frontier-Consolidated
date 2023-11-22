@@ -13,6 +13,6 @@ class CommunitySeeder extends Seeder
      */
     public function run(): void
     {
-        Community::factory()->count(5)->create();
+        Community::factory()->count(25)->create();
     }
 }
