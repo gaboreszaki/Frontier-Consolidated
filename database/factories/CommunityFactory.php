@@ -18,8 +18,8 @@ class CommunityFactory extends Factory
     {
         return [
             'layout' => fake()->randomElement(['left', 'right', 'center']),
-            'title' => fake()->text(50),
-            'content' => fake()->text(2000),
+            'title' => fake()->realText(40),
+            'content' => fake()->realTextBetween(10, 450),
             'background_image' => null,
             'is_pinned' => fake()->boolean(),
             'priority' => fake()->numberBetween(1, 100)

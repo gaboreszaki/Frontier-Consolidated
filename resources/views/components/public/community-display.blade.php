@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div >
 
     @foreach($community as $item)
 

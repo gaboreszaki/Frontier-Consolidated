@@ -1,6 +1,3 @@
-<div>
-
-
     <div class="row mb-3 border border-1 border-gray-800">
 
         {{-- Todo: create a more elegant solution --}}
@@ -8,7 +5,7 @@
 
         {{--LEFT--}}
         @if($item->layout === "left")
-            <div class="col-5">
+            <div class="col-5 p-5">
                 <h3>{{$item->title}}</h3>
                 <div>{{$item->content}}</div>
             </div>
@@ -37,4 +34,3 @@
 
 
     </div>
-</div>

@@ -16,7 +16,7 @@
 <div id="app" class="container-fluid">
     <div class="row bg-black mb-3">
         <div class="col-12">
-            <div class="container">
+            <div class="container-fluid">
                 <x-public.site-nav></x-public.site-nav>
             </div>
         </div>

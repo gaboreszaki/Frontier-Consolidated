@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $this->call([DefaultUserSeeder::class ]);
+        $this->call([DefaultUserSeeder::class, AfterEventReportSeeder::class, CommunitySeeder::class, NewsSeeder::class ]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

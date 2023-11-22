@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Community;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class CommunitySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Community::factory()->count(5)->create();
     }
 }
