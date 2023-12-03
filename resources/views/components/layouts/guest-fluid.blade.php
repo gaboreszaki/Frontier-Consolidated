@@ -22,6 +22,7 @@
         </div>
     </div>
     <div class="container-fluid">
+        <x-public.last-announcement-display/>
         {{ $slot }}
     </div>
 </div>
