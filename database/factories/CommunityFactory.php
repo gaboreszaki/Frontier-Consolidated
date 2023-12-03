@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use function Livewire\Volt\layout;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\community>
  */
@@ -16,17 +18,21 @@ class CommunityFactory extends Factory
      */
     public function definition(): array
     {
+        
+        $layouts = [
+            'centered',
+            'center-left',
+            'center-right',
+            'top-left',
+            'top-right',
+            'bottom-left',
+            'bottom-right'
+        ] ;
+        $layout = fake()->randomElement($layouts);
+        
         return [
-            'layout' => fake()->randomElement([
-                'centered',
-                'center-left',
-                'center-right',
-                'top-left',
-                'top-right',
-                'bottom-left',
-                'bottom-right'
-            ]),
-            'title' => fake()->realText(40),
+            'layout' => $layout,
+            'title' => "Example - $layout",
             'content' => fake()->realTextBetween(10, 450),
             'background_image' => fake()->randomElement(config('tmp_images.images')),
             'is_pinned' => fake()->boolean(),
