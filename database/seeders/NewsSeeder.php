@@ -13,6 +13,12 @@ class NewsSeeder extends Seeder
      */
     public function run(): void
     {
+        News::factory()->create([
+            'title' => "Disclaimer",
+            'content' => "This website is under development, all image, text, link etc act as a placeholder most of the content is factory generated, as so it is not represent the final product.",
+            'author' => 'NorthAce',
+            'is_announcement'=> 1
+        ]);
         News::factory()->count(5)->create();
     }
 }
