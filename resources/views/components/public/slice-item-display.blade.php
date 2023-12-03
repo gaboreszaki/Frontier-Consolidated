@@ -1,6 +1,5 @@
-<div class="row mb-3 border border-1 border-gray-800">
+<div class="row mb-0">
 
-    @dump($item->layout)
     {{-- Todo: create a more elegant solution --}}
     <figure class="image">
 

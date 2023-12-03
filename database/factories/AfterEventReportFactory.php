@@ -23,7 +23,7 @@ class AfterEventReportFactory extends Factory
             'title' => fake()->text(50),
             'op_leader' => fake()->text(20),
             'op_date' => fake()->date(),
-            'op_summary' => fake()->paragraph(),
+            'op_summary' => fake()->text(450),
             'op_went_well' => fake()->paragraph(),
             'op_can_be_improved' => fake()->paragraph(),
             'op_cover_img' => fake()->randomElement(config('tmp_images.images')),

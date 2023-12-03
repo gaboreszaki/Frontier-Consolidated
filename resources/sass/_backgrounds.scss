@@ -19,13 +19,13 @@ body {
 
     & .figcaption {
 
-      border: 1px solid greenyellow;
-      background: rgba(9, 9, 9, 0.2);
+      //border: 1px solid greenyellow;
+      background: rgba(9, 9, 9, 0.6);
       padding: 2em;
 
       & .indicator {
-        border: 1px solid lightskyblue;
-        border-collapse: unset;
+        //border: 1px solid lightskyblue;
+        //border-collapse: unset;
       }
 
 
@@ -38,6 +38,8 @@ body {
 
       &.bottom-right {
         position: absolute;
+        left: 40%;
+        top: 65%;
         bottom: 5%;
         right: 5%;
       }
@@ -60,14 +62,14 @@ body {
 
       &.center-left {
         position: absolute;
-        top: 50%;
+        top: 30%;
         left: 5%;
-        right: 40%;
+        right: 60%;
       }
 
       &.center-right {
         position: absolute;
-        top: 50%;
+        top: 30%;
         left: 60%;
         right: 5%;
 
@@ -75,8 +77,10 @@ body {
 
       &.centered {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 35%;
+        left: 30%;
+        right: 30%;
+
       }
     }
   }
