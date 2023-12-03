@@ -29,9 +29,10 @@ class NewsService
             [
                 'title' => $valid['title'],
                 'content' => $valid['content'],
-                'author' => 'admin_user' ///Todo: replace user with authed user
+                'author' => 'admin_user', ///Todo: replace user with authed user
+                'is_announcement' => 0
             ]
-        );
+        )->touch();
 
         return $news;
     }
