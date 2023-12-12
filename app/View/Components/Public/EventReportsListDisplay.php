@@ -16,7 +16,7 @@ class EventReportsListDisplay extends Component
     
     public function __construct()
     {
-        $this->reports = AfterEventReport::all();
+        $this->reports = AfterEventReport::last()->get();
     }
 
     /**

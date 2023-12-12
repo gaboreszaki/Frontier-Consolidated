@@ -15,8 +15,8 @@ class MainPageNewsDisplay extends Component
     public $latestNews;
     public function __construct()
     {
-        $news = new News();
-        $this->latestNews = $news->lastFewNews()->get();
+
+        $this->latestNews = News::news()->last(5)->get();
     }
 
     /**

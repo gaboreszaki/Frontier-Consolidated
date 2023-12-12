@@ -15,8 +15,8 @@ class LastAnnouncementDisplay extends Component
     public $lastAnnouncement;
     public function __construct()
     {
-        $news = new News();
-        $this->lastAnnouncement = $news->lastAnnouncement()->first();
+
+        $this->lastAnnouncement = News::Announcement()->last(1)->first();
         
     }
 

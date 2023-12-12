@@ -24,17 +24,22 @@
                 'updated_at' => 'datetime:Y-m-d'
             ];
         
-        public function scopeLastAnnouncement(Builder $query): void
+
+        
+        public function scopeAnnouncement(Builder $query): void
         {
-            $query->where('is_announcement', '=', 1)
-                ->latest();
+            $query->where('is_announcement', '=', 1);
+            
+        }
+        public function scopeNews(Builder $query): void
+        {
+            $query->where('is_announcement', '=', 0);
+            
         }
         
-        
-        public function scopeLastFewNews(Builder $query): void
+        public function scopeLast(Builder $query, int $limit = 10): void
         {
-            $query->where('is_announcement', '=', 0)
-                ->orderBy('updated_at', 'desc')->limit(5);
+            $query->orderBy('updated_at', 'desc')->limit($limit);
             
         }
         
