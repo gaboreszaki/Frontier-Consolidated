@@ -14,15 +14,14 @@ jobs:
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh/
-          echo "$SSH_KEY" > ~/.ssh/staging.key
-          cat ~/.ssh/staging.key
-          chmod 600 ~/.ssh/staging.key
+          echo "$SSH_KEY" > ~/.ssh/development.key
+          chmod 600 ~/.ssh/development.key
           cat >>~/.ssh/config <<END
-          Host staging
+          Host development
             HostName $SSH_HOST
             User $SSH_USER
             Port $SSH_PORT
-            IdentityFile ~/.ssh/staging.key
+            IdentityFile ~/.ssh/development.key
             StrictHostKeyChecking no
           END
         env:
@@ -32,6 +31,6 @@ jobs:
           SSH_PORT: ${{ secrets.SSH_PORT }}
 
       - name: Check out the source
-        run: ssh staging "cd deployer && ./deploy.sh ${{ vars.TARGET_DOMAIN }}"
+        run: ssh development "cd deployer && ./deploy.sh ${{ vars.TARGET_DOMAIN }}"
 
 
