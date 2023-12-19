@@ -18,5 +18,5 @@ yarn-error.log
 /.idea
 /.vscode
 .editorconfig
-/public/images/
+
 /bootstrap/cache
