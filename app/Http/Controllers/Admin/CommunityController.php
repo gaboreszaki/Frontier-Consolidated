@@ -3,15 +3,21 @@
     namespace App\Http\Controllers\Admin;
     
     use App\Http\Controllers\Controller;
-    use App\Http\Requests\StorecommunityRequest;
+    use App\Http\Requests\StoreCommunityRequest;
     use App\Http\Requests\UpdatecommunityRequest;
     use App\Models\Community;
+    use App\Services\FileHandlingService;
     use Illuminate\View\View;
     
     use function Livewire\Volt\layout;
     
     class CommunityController extends Controller
     {
+        
+        public function __construct(
+            public FileHandlingService $fileHandlingService
+        ) {
+        }
         
         /**
          * Display a listing of the resource.
@@ -37,9 +43,24 @@
         /**
          * Store a newly created resource in storage.
          */
-        public function store(StorecommunityRequest $request)
+        public function store(StoreCommunityRequest $request)
         {
-            //
+            $valid = $request->validated();
+            
+            /// If We have an image lets store it
+            $fileName = $this->fileHandlingService->storeOriginal(
+                $request->file('background_image')
+            );
+            $this->fileHandlingService->processImageByType(
+                'thumbnail',
+                $fileName
+            );
+            $this->fileHandlingService->processImageByType('card', $fileName);
+            
+            $valid['background_image'] = $fileName;
+            Community::create($valid);
+            
+            return redirect('/admin/community');
         }
         
         /**

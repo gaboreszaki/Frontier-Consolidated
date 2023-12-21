@@ -26,37 +26,16 @@
 
                     </div>
                     <div class="col-4">
-
-                        {{--                        <input type="text" class="form-control @error('op_leader') is-invalid @enderror" id="op_leader" placeholder="Operation Leader" name="op_leader" value="{{ old(op_leader }}">--}}
-                        {{--                        <label for="layout">Layout:</label>--}}
-
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1">Layout:</span>
-
-
                             <select class="form-select form-select-lg @error('layout') is-invalid @enderror" aria-label="layout" name="layout" id="layout">
                                 <option selected>Select layout</option>
-
                                 @foreach($layouts as $layout)
-
                                     <option value="{{ $layout }}" @selected(old('layout') == $layout)>
                                         {{ $layout }}
                                     </option>
                                 @endforeach
-
-
-                                {{--                            <select name="version">--}}
-                                {{--                                @foreach ($product->versions as $version)--}}
-                                {{--                                    <option value="{{ $layout }}" @selected(old('layout') == $layout)>--}}
-                                {{--                                        {{ $layout }}--}}
-                                {{--                                    </option>--}}
-                                {{--                                @endforeach--}}
-                                {{--                            </select>--}}
-
-
                             </select>
-
-
                             @error('layout')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -67,7 +46,6 @@
 
                 <div class="row">
                     <div class="col-8">
-
                         @if( old("background_image") )
                             <div class="row">
                                 <div class="col-8">
@@ -80,11 +58,11 @@
 
                         @else
                             <div class="form-floating mb-3">
-                                @error('op_cover_img')
+                                @error('background_image')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-                                <input type="file" class="form-control @error('op_cover_img') is-invalid @enderror" id="op_image_url" placeholder="Operation Thumbnail" name="op_cover_img" value="{{ old("op_cover_img") }}">
-                                <label for="op_cover_img">Thumbnail - TODO: add image Uploader</label>
+                                <input type="file" class="form-control @error('background_image') is-invalid @enderror" id="background_image" placeholder="background imagel" name="background_image" value="{{ old("background_image") }}">
+                                <label for="background_image">Thumbnail - TODO: add image Uploader</label>
                             </div>
                         @endif
 
@@ -118,9 +96,9 @@
 
                 </div>
 
-            <div class="card-footer text-end mt-3">
-                <button type="submit" class="btn btn-primary">Save</button>
+                <div class="card-footer text-end mt-3">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
             </div>
-        </div>
     </form>
 </x-layouts.admin>
