@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AfterEventReportController;
-use App\Http\Controllers\Admin\NewsController;
+    use App\Http\Controllers\Admin\CommunityController;
+    use App\Http\Controllers\Admin\NewsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,6 +22,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
     Route::view('/', 'admin')->name('admin');
     Route::resource('/news', NewsController::class);
     Route::resource('/reports', AfterEventReportController::class);
+    Route::resource('/community', CommunityController::class);
 });
 
 Auth::routes(['register' => false]);

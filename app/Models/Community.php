@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Community extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'layout',
+        'title',
+        'content',
+        'background_image',
+        'is_pinned',
+        'priority'
+    ];
 }
