@@ -14,14 +14,14 @@
          *
          * @var string
          */
-        protected $signature = 'app:process-temp-images';
+        protected $signature = 'images:process-temp';
         
         /**
          * The console command description.
          *
          * @var string
          */
-        protected $description = 'Command description';
+        protected $description = 'Processing temp images to storage.';
         
         /**
          * Execute the console command.
@@ -31,42 +31,32 @@
             echo "build temp disk";
             $disk = Storage::build([
                 'driver' => 'local',
-                'root' => '/',
+                'root' => 'public/',
             ]);
             
-            $directory = "public/images/temp";
-            $files = $disk->files($directory);
-            
-            dump($files);
+            $directory = "images/temp";
+            $files = $disk->files($directory, true);
             
             foreach ($files as $file) {
-                
-                
                 $file_name = basename($file);
-                dump($file_name);
                 
-                Storage::disk('public')->put("originals/$file_name", $disk->get("$directory/$file_name"));
+                echo "Processing:  $file_name \n ";
                 
+                echo " - Copy from temp folder to originals";
+                Storage::disk('public')->put(
+                    "originals/$file_name",
+                    $disk->get("$directory/$file_name")
+                );
                 
-                
-//
+                # utilising the fileHandling services and process different sized images:
                 $fileService = new FHS();
                 
+                echo " - Generating thumbnail";
                 $fileService->processImageByType('thumbnail', $file_name);
+                echo " - Generating card";
                 $fileService->processImageByType('card', $file_name);
-//
-//
-//                $fileName = $fileService->storeOriginal($file);
-//
-//                Storage::disk('FTP')->put('new/file1.jpg', Storage::get('old/file1.jpg'));
-                
+                echo "\n\n";
             }
-            
-            # iteration:
-//        $fileName = $this->fileHandlingService->storeOriginal($request->file('op_cover_img'));
-//        $this->fileHandlingService->processImageByType('thumbnail', $fileName);
-//        $this->fileHandlingService->processImageByType('card', $fileName);
-        
         }
         
     }
