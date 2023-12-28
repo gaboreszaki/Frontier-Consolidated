@@ -28,12 +28,12 @@
         
         public function scopeAnnouncement(Builder $query): void
         {
-            $query->where('is_announcement', '==', 1);
+            $query->where('is_announcement', '=', 1);
         }
         
         public function scopeNews(Builder $query): void
         {
-            $query->where('is_announcement', '==', 0);
+            $query->where('is_announcement', '=', 0);
         }
         
         public function scopeLast(Builder $query, int $limit = 10): void
