@@ -19,17 +19,20 @@ class NewsController extends Controller
     public function __construct(public NewsService $newsService)
     {
     }
-    public function index():NewsCollection
+    public function index():NewsResource | string
     {
-        $news = News::all();
-        return new NewsCollection($news);
+//        return "TEST - HIT";
+
+        
+        $news_entries = News::all();
+
+        return new NewsResource($news_entries);
     }
 
     public function store(StoreNewsRequest $request): NewsResource
     {
-        return json('OK');
-
-        $response = $this->newsService->createNews($request->validated());
+//        dd($this->newsService->createNews($request));
+        $response = $this->newsService->createNews($request);
         return new NewsResource($response);
     }
     public function show(News $news): NewsResource

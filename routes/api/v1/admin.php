@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     'prefix'     => 'admin',
     'as'         => 'admin.',
-    'middleware' => ['auth'],
+//    'middleware' => ['auth'],
 ], function () {
     Route::apiResource('news', NewsController::class);
 });
