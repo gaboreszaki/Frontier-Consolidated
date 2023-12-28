@@ -4,7 +4,7 @@
     
     use App\Http\Controllers\Controller;
     use App\Http\Requests\StoreCommunityRequest;
-    use App\Http\Requests\UpdatecommunityRequest;
+    use App\Http\Requests\UpdateCommunityRequest;
     use App\Models\Community;
     use App\Services\FileHandlingService;
     use Illuminate\View\View;
@@ -88,10 +88,26 @@
          * Update the specified resource in storage.
          */
         public function update(
-            UpdatecommunityRequest $request,
-            community $community
+            UpdateCommunityRequest $request,
+            Community $community
         ) {
-            //
+            $valid = $request->validated();
+            
+            $community->updateOrCreate(
+                [
+                    'id' => $community->id
+                ], [
+                    'layout' => $valid["layout"],
+                    'title' => $valid["title"],
+                    'content' => $valid["content"],
+                    'is_pinned' => isset($valid["is_pinned"])? $valid['is_pinned']: 0,
+                    'priority' => $valid["priority"]
+                ]
+            );
+            
+            
+            return to_route('admin.community.index')
+                ->withStatus('Community entry updated successfully.');
         }
         
         /**

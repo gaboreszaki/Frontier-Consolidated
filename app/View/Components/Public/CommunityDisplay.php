@@ -18,7 +18,7 @@ class CommunityDisplay extends Component
      */
     public function __construct()
     {
-        $this->community = Community::all();
+        $this->community = Community::default()->get();
     }
 
     /**

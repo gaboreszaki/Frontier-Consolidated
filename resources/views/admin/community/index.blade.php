@@ -26,6 +26,9 @@
                     <div class="card-body ">
                         <div class="card-title">
                             <div class="float-end">
+
+                                <span class="badge bg-secondary">priority: {{$community->priority}} </span>
+
                                 <a href="{{route('admin.community.show', $community)}}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
                                 <a href="{{route('admin.community.edit', $community)}}" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
                             </div>
