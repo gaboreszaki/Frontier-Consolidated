@@ -24,7 +24,7 @@ class StoreNewsRequest extends FormRequest
         return [
             'title' => 'required|string|min:3|max:255',
             'content' => 'required|string|min:3|max:5000',
-            'is_announcement' => 'boolean'
+            'is_announcement' => 'nullable|boolean'
         ];
     }
 }
