@@ -13,26 +13,42 @@
         <div class="card shadow-md">
             <div class="card-body ">
 
-                <x-forms.alert-display-error-list :errors="$errors"/>
 
-                <div class="card-title">
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control @error('title') is-invalid @enderror" id="news_title" placeholder="Title" name="title" value="{{ old('title') }}">
-                        <label for="news_title">News title</label>
+                <div class="row">
+                    <x-forms.alert-display-error-list :errors="$errors"/>
+                    <div class="col-8">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control @error('title') is-invalid @enderror" id="news_title" placeholder="Title" name="title" value="{{ old('title') }}">
+                            <label for="news_title">News title</label>
 
-                        @error('title')
+                            @error('title')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        {{-- is_announcement: --}}
+                        <div class="form-check @error('is_announcement') is-invalid @enderror">
+                            <input class="form-check-input" type="checkbox" value="1" id="is_announcement" name="is_announcement" @checked(old("is_announcement") == true)>
+                            <label class="form-check-label" for="is_announcement">
+                                Announcement
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="news_content">Content</label>
+                        @error('content')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
+                        <textarea class="tmce @error('title') is-invalid @enderror" id="news_content" name="content" >
+                    {{ old('content') }}
+                </textarea>
                     </div>
 
                 </div>
-                <label for="news_content">Content</label>
-                    @error('content')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                <textarea class="tmce @error('title') is-invalid @enderror" id="news_content" name="content" >
-                    {{ old('content') }}
-                </textarea>
+
+
 
             </div>
             <div class="card-footer text-end">

@@ -23,7 +23,7 @@
             = [
 //                'created_at' => 'datetime:Y-m-d',
 //                'updated_at' => 'datetime:Y-m-d',
-//                'is_announcement' => 'boolean'
+                'is_announcement' => 'boolean'
             ];
         
         public function scopeAnnouncement(Builder $query): void

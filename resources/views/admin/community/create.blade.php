@@ -74,7 +74,7 @@
 
                         {{-- Is Pinned: --}}
                         <div class="form-check @error('is_pinned') is-invalid @enderror">
-                            <input class="form-check-input" type="checkbox" value="true" id="is_pinned" @checked(old("is_pinned") == true)>
+                            <input class="form-check-input" type="checkbox" value="1" id="is_pinned" name="is_pinned" @checked(old("is_pinned") == true)>
                             <label class="form-check-label" for="is_pinned">
                                 Pinned
                             </label>
