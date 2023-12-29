@@ -15,8 +15,8 @@
                 <a class="nav-link" data-bs-toggle="collapse" href="#staticPageItems" role="button" aria-expanded="false" aria-controls="staticPageItems">Static Pages</a>
                 <div class="collapse multi-collapse" id="staticPageItems">
                     <ul>
-                        <li class="nav-item disabled"><a href="{{route('admin.community.index')}}" class="nav-link">Community</a></li>
-                        <li class="nav-item disabled"><a href="#" class="nav-link">Organisation</a></li>
+                        <li class="nav-item "><a href="{{route('admin.community.index')}}" class="nav-link">Community</a></li>
+                        <li class="nav-item "><a href="#" class="nav-link disabled">Organisation</a></li>
                     </ul>
                 </div>
 
