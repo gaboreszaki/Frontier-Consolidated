@@ -5,14 +5,16 @@ namespace App\Services;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\Models\News;
-
+use Illuminate\Support\Facades\Auth;
 
 class NewsService
 {
     public function createNews(StoreNewsRequest $request): News
     {
+        
+
         $valid = $request->validated();
-        $valid['author'] = 'admin_user'; ///Todo: replace user with authed user
+        $valid['author'] = Auth::user() ? Auth::user()->name : 'test_user'; ///Todo: replace user with authed user
 
         return News::create($valid);
     }

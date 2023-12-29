@@ -19,7 +19,7 @@ class NewsFactory extends Factory
         return [
             'title' => fake()->text(30),
             'content' => fake()->text(200),
-            'author' => 'user',
+            'author' => fake()->userName,
             'is_announcement'=> 0
         ];
     }
