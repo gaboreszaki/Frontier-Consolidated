@@ -35,7 +35,18 @@
             $this->assertDatabaseHas('news', $news);
         }
         
-        public function test_news_can_retrieved_thru_api(): void
+        public function test_news_can_not_be_served_for_guest()
+        {
+            /// Given
+            $response = $this->getJson('/api/v1/admin/news');
+            
+            
+            /// Then
+            $response->assertStatus(401);
+            $response->assertExactJson(["message" => "Unauthenticated."]);
+        }
+        
+        public function test_news_can_retrieved_thru_api_for_valid_users(): void
         {
             /// Given
             $expectedStructure = [
@@ -48,13 +59,14 @@
                     ]
                 ]
             ];
-            
+            $user = User::factory()->create();
             News::factory()->create(['author' => 'php_unit_test'])->toArray();
             
             // When
-            $response = $this->getJson('/api/v1/admin/news');
+            $response = $this->actingAs($user)->getJson('/api/v1/admin/news');
             
             // Then
+            $response->assertOk();
             $response->assertJsonStructure($expectedStructure);
         }
         
