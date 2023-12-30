@@ -1,31 +1,62 @@
 # FRCN - Frontier Consolidated Official Website
 
-## Planned Pages/features 
+## Planned Pages/features tracker:
 
-__Visitor/Guest__
+__Visitor/Guest pages__
+- [x] Landing Page
+  - [x] Navs & layouts
+  - [x] News display
+  - [x] Announcements display
+  - [x] Event reports list and popup
+- [ ] Community page
+  - [x] Display prototype
+- [ ] Organisation page
+- [ ] Activities page
+- [ ] Guides and resources page
 
-- [ ] News & Announcements
-- [ ] Activities
-- [ ] Community 
-- [ ] Organisation
-- [ ] Guides and resources
-- [ ] Event reports
 
 ---
-__Admin__
-- [ ] Authentication and password services
+__Admin pages__
+- [x] Authentication and password services
+  - [x] Login & logout
+  - [ ] Password recovery
+
 - [x] Admin panel v0.1
-- [x] CRUD - News 
-- [x] CRUD - Reports
-- [ ] CRUD - Events
-- [ ] CRUD - Guides
+- [x] News - CRUD
+  - [x] News
+  - [x] Announcements
+- [x] Event reports - CRUD
+  - [x] Image conversions
+  - [ ] Image manipulation
+  - [x] Image removal by name
+- [ ] Static page content generator (low priority)
+  - [x] Prototype
+  - [x] Text On image display
+  - [ ] OnFly editor 
 - [ ] File upload manager
-- [ ] Static page content Generator (low priority)
+- [ ] Guides
+- [ ] User/self pages
+  - [ ] profile forms
+  - [ ] security forms
+  - [ ] oAuth/token Forms
+
+- [ ] Administration
+  - [ ] GUI User manager
+  - [ ] GUI Image lib. manager
+  - [ ] GUI Invitation system
+  - [ ] GUI Dashboard
+
+---
+# Planned Contents:
+<sup>_(Public facing pages, and their descriptions:)_</sup>
 
 
 ### News & announcements
 A place to communicate news to the public
-> Admin page CRUD interface
+> Admin page CRUD interface with a checkbox to differentiate between News and Announcement
+
+_**FEATURE - News** -> REST API with Token based auth (laravel sanctum)_
+
 
 ### Activities
 Activities is a dynamic page where we can showcase regular events and past events results.
