@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGuideCategoryRequest;
 use App\Http\Requests\UpdateGuideCategoryRequest;
-use App\Models\GuideCategory;
+use App\Models\Category;
 
 class GuideCategoryController extends Controller
 {
@@ -36,7 +36,7 @@ class GuideCategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(GuideCategory $guideCategory)
+    public function show(Category $guideCategory)
     {
         //
     }
@@ -44,7 +44,7 @@ class GuideCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(GuideCategory $guideCategory)
+    public function edit(Category $guideCategory)
     {
         //
     }
@@ -52,7 +52,7 @@ class GuideCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateGuideCategoryRequest $request, GuideCategory $guideCategory)
+    public function update(UpdateGuideCategoryRequest $request, Category $guideCategory)
     {
         //
     }
@@ -60,7 +60,7 @@ class GuideCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(GuideCategory $guideCategory)
+    public function destroy(Category $guideCategory)
     {
         //
     }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGuideGameVersionsRequest;
 use App\Http\Requests\UpdateGuideGameVersionsRequest;
-use App\Models\GuideGameVersions;
+use App\Models\GameVersions;
 
 class GuideGameVersionsController extends Controller
 {
@@ -36,7 +36,7 @@ class GuideGameVersionsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(GuideGameVersions $guideGameVersions)
+    public function show(GameVersions $guideGameVersions)
     {
         //
     }
@@ -44,7 +44,7 @@ class GuideGameVersionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(GuideGameVersions $guideGameVersions)
+    public function edit(GameVersions $guideGameVersions)
     {
         //
     }
@@ -52,7 +52,7 @@ class GuideGameVersionsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateGuideGameVersionsRequest $request, GuideGameVersions $guideGameVersions)
+    public function update(UpdateGuideGameVersionsRequest $request, GameVersions $guideGameVersions)
     {
         //
     }
@@ -60,7 +60,7 @@ class GuideGameVersionsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(GuideGameVersions $guideGameVersions)
+    public function destroy(GameVersions $guideGameVersions)
     {
         //
     }

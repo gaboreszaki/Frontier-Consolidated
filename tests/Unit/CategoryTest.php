@@ -2,7 +2,7 @@
     
     namespace Tests\Unit;
     
-    use App\Models\GuideCategory;
+    use App\Models\Category;
     use Illuminate\Database\QueryException;
     use Illuminate\Foundation\Testing\DatabaseTransactions;
     use Tests\TestCase;
@@ -14,7 +14,7 @@
         
         public function test_model_exists_and_writable()
         {
-            $category = GuideCategory::factory()->create();
+            $category = Category::factory()->create();
             
             $this->assertModelExists($category);
             $this->assertDatabaseHas('guide_categories', $category->toArray());
@@ -23,9 +23,9 @@
         public function test_model_has_name_and_description()
         {
             /// Given
-            $category = GuideCategory::factory()->create();
+            $category = Category::factory()->create();
             /// When
-            $request = GuideCategory::where('id', $category->id)->first();
+            $request = Category::where('id', $category->id)->first();
             
             /// Then
             $this->assertTrue($request->count() > 0);
@@ -37,7 +37,7 @@
         {
             $this->expectException(QueryException::class);
             // Forcing Too long data: #41 char
-            GuideCategory::factory()->create([
+            Category::factory()->create([
                 'name' => 'Lorem ipsum dolor sit amet viverra fusce.'
             ]);
         }
@@ -46,7 +46,7 @@
         {
             $this->expectException(QueryException::class);
             // Forcing Too long data: #451 char
-            GuideCategory::factory()->create([
+            Category::factory()->create([
                 'name' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum sapien orci, ac pretium diam mollis mattis. Suspendisse eget efficitur ex. Suspendisse a sem eleifend magna lobortis gravida nec sit amet massa. Cras egestas libero sit amet elit luctus, ac viverra nunc elementum. Praesent ac congue nisi. Sed fermentum turpis in placerat molestie. Sed non iaculis velit, eget accumsan elit. Maecenas ut felis ullamcorper, fringilla metus eleifend. '
                 #451 char
             ]);

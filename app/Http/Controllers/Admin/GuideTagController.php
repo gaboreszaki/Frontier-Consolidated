@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGuideTagRequest;
 use App\Http\Requests\UpdateGuideTagRequest;
-use App\Models\GuideTag;
+use App\Models\Tag;
 
 class GuideTagController extends Controller
 {
@@ -36,7 +36,7 @@ class GuideTagController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(GuideTag $guideTag)
+    public function show(Tag $guideTag)
     {
         //
     }
@@ -44,7 +44,7 @@ class GuideTagController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(GuideTag $guideTag)
+    public function edit(Tag $guideTag)
     {
         //
     }
@@ -52,7 +52,7 @@ class GuideTagController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateGuideTagRequest $request, GuideTag $guideTag)
+    public function update(UpdateGuideTagRequest $request, Tag $guideTag)
     {
         //
     }
@@ -60,7 +60,7 @@ class GuideTagController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(GuideTag $guideTag)
+    public function destroy(Tag $guideTag)
     {
         //
     }

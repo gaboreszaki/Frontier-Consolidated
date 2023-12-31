@@ -2,47 +2,47 @@
     
     namespace Tests\Unit;
     
-    use App\Models\Tag;
+    use App\Models\Guide;
     use Illuminate\Database\QueryException;
     use Illuminate\Foundation\Testing\DatabaseTransactions;
     use Tests\TestCase;
     
-    class TagTest extends TestCase
+    class GuideTest extends TestCase
     {
         
-        use DatabaseTransactions;
+//        use DatabaseTransactions;
         
         public function test_model_exists_and_writable()
         {
-            $category = Tag::factory()->create();
+            $category = Guide::factory()->create();
             
             $this->assertModelExists($category);
-            $this->assertDatabaseHas('guide_tags', $category->toArray());
+            $this->assertDatabaseHas('guides', $category->toArray());
         }
         
         public function test_model_has_name()
         {
             /// Given
-            $category = Tag::factory()->create();
+            $guide = Guide::factory()->create();
             /// When
-            $request = Tag::where('id', $category->id)->first();
+            $request = Guide::where('id', $guide->id)->first();
             
             /// Then
             $this->assertTrue($request->count() > 0);
-            $this->assertEquals($category->name, $request->name);
-
+            $this->assertEquals($guide->name, $request->name);
+            
         }
         
         public function test_name_length_max_40_char()
         {
             $this->expectException(QueryException::class);
             // Forcing Too long data: #41 char
-            Tag::factory()->create([
+            Guide::factory()->create([
                 'name' => 'Lorem ipsum dolor sit amet viverra fusce.'
             ]);
         }
         
-
+        
         
     }
     

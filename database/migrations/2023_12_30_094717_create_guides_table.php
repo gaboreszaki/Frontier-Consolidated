@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('guides', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('title', 200);
             $table->text('description');
             $table->string('video_url', 500);
