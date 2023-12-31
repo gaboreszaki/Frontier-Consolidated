@@ -1,4 +1,5 @@
 # FRCN - Frontier Consolidated Official Website
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/041dca2e803e421abf57f4fd11d1667d)](https://app.codacy.com/gh/gaboreszaki/Frontier-Consolidated/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 ## Planned Pages/features tracker:
 
