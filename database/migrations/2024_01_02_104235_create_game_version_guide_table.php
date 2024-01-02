@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('guide_tag', function (Blueprint $table) {
+        Schema::create('game_version_guide', function (Blueprint $table) {
             $table->unsignedBigInteger('guide_id');
-            $table->unsignedBigInteger('tag_id');
+            $table->unsignedBigInteger('game_version_id');
             
             
             $table->foreign('guide_id')->references('id')->on('guides');
-            $table->foreign('tag_id')->references('id')->on('tags');
+            $table->foreign('game_version_id')->references('id')->on('game_versions');
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('guide_tag');
+        Schema::dropIfExists('game_version_guide');
     }
 };

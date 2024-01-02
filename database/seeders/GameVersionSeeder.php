@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\GameVersion;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class GameVersionSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        GameVersion::factory()->count(15)->create();
     }
 }

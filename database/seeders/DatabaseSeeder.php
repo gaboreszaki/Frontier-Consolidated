@@ -13,7 +13,22 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $this->call([DefaultUserSeeder::class, AfterEventReportSeeder::class, CommunitySeeder::class, NewsSeeder::class ]);
+        $this->call([
+            // Test Users
+            DefaultUserSeeder::class,
+        
+            // Test Data:
+            AfterEventReportSeeder::class,
+            CommunitySeeder::class,
+            NewsSeeder::class,
+        
+            //// Guides
+            CategorySeeder::class,
+            TagSeeder::class,
+            GameVersionSeeder::class,
+            GuideSeeder::class
+            
+        ]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

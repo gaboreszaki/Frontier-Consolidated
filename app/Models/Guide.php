@@ -22,4 +22,9 @@
             return $this->belongsToMany(Tag::class);
         }
         
+        public function gameVersions(): BelongsToMany
+        {
+            return $this->belongsToMany(GameVersion::class);
+        }
+        
     }
