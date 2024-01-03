@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\GameVersion;
-use App\Http\Requests\StoreGameVersionRequest;
-use App\Http\Requests\UpdateGameVersionRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreTagRequest;
+use App\Http\Requests\UpdateTagRequest;
+use App\Models\Tag;
 
-class GameVersionController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class GameVersionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreGameVersionRequest $request)
+    public function store(StoreTagRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class GameVersionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(GameVersion $gameVersion)
+    public function show(Tag $tag)
     {
         //
     }
@@ -43,7 +44,7 @@ class GameVersionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(GameVersion $gameVersion)
+    public function edit(Tag $tag)
     {
         //
     }
@@ -51,7 +52,7 @@ class GameVersionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateGameVersionRequest $request, GameVersion $gameVersion)
+    public function update(UpdateTagRequest $request, Tag $tag)
     {
         //
     }
@@ -59,7 +60,7 @@ class GameVersionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(GameVersion $gameVersion)
+    public function destroy(Tag $tag)
     {
         //
     }
