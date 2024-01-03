@@ -42,7 +42,7 @@
                 
                 echo "Processing:  $file_name \n ";
                 
-                echo " - Copy from temp folder to originals";
+                echo " - Copy from temp folder to originals\n";
                 Storage::disk('public')->put(
                     "originals/$file_name",
                     $disk->get("$directory/$file_name")
@@ -51,9 +51,9 @@
                 # utilising the fileHandling services and process different sized images:
                 $fileService = new FHS();
                 
-                echo " - Generating thumbnail";
+                echo " - Generating thumbnail\n";
                 $fileService->processImageByType('thumbnail', $file_name);
-                echo " - Generating card";
+                echo " - Generating card\n";
                 $fileService->processImageByType('card', $file_name);
                 echo "\n\n";
             }
