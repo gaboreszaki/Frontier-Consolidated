@@ -27,4 +27,8 @@
             return $this->belongsToMany(GameVersion::class);
         }
         
+        public function attachments(): BelongsToMany
+        {
+            return $this->belongsToMany(Attachment::class);
+        }
     }
