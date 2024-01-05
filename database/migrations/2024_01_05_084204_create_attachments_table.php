@@ -16,8 +16,12 @@ return new class extends Migration
             $table->string('name', '254');
             $table->string('original_filename','254');
             $table->string('filename', '254');
+            $table->string('filetype', '254');
             $table->enum('status', ['ready', 'uploading', 'processing', 'deleted']);
             $table->string('uploader', '254');
+            $table->boolean('has_original')->default(false);
+            $table->boolean('has_card')->default(false);
+            $table->boolean('has_thumbnail')->default(false);
             $table->timestamps();
         });
     }

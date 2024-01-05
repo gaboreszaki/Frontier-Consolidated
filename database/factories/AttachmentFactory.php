@@ -24,8 +24,12 @@ class AttachmentFactory extends Factory
             'name' => fake()->words('3',true),
             'original_filename' => "$fileName.$fileExt",
             'filename' => base64_encode($fileName).".$fileExt",
+            'filetype' => fake()->mimeType(),
             'status' => fake()->randomElement(['ready', 'uploading', 'processing', 'deleted']),
-            'uploader' => fake()->userName()
+            'uploader' => fake()->userName(),
+            'has_original' => fake()->boolean(),
+            'has_card' => fake()->boolean(),
+            'has_thumbnail' => fake()->boolean(),
         ];
     }
 }

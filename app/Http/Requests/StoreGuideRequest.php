@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreGuideRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class StoreGuideRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return Auth::check();
     }
 
     /**
@@ -22,7 +23,11 @@ class StoreGuideRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'category_id' => "required|integer",
+            'title' => "required|string|min:3|max:200",
+            'description' => "string|min:3|max:15000",
+            'video_url' => "url:http,https"
+            
         ];
     }
 }

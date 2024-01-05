@@ -12,6 +12,13 @@
         
         use HasFactory;
         
+        protected $fillable = [
+            'category_id',
+            'title',
+            'description',
+            'video_url'
+        ];
+        
         public function category(): BelongsTo
         {
             return $this->belongsTo(Category::class);

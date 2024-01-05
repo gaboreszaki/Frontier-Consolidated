@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGuideRequest;
 use App\Http\Requests\UpdateGuideRequest;
+use App\Models\Attachment;
+use App\Models\Category;
+use App\Models\GameVersion;
 use App\Models\Guide;
+use App\Models\Tag;
 
 class GuideController extends Controller
 {
@@ -14,7 +18,8 @@ class GuideController extends Controller
      */
     public function index()
     {
-        //
+        $guides = Guide::all();
+        return view('admin.guides.index', compact('guides'));
     }
 
     /**
@@ -22,7 +27,11 @@ class GuideController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $game_versions = GameVersion::all();
+        $tags = Tag::all();
+        $attachments = Attachment::all();
+        return view('admin.guides.create', compact('categories','game_versions', 'tags', 'attachments'));
     }
 
     /**
@@ -30,7 +39,14 @@ class GuideController extends Controller
      */
     public function store(StoreGuideRequest $request)
     {
-        //
+        
+        
+        $valid = $request->validated();
+        
+
+        Guide::create($valid);
+        
+        return redirect('/admin/guides');
     }
 
     /**

@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Attachment;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAttachmentRequest;
 use App\Http\Requests\UpdateAttachmentRequest;
+use App\Models\Attachment;
 
 class AttachmentController extends Controller
 {

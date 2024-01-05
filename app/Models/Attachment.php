@@ -10,6 +10,19 @@ class Attachment extends Model
 {
     use HasFactory;
     
+    protected $fillable = [
+        'name',
+        'original_filename',
+        'filename',
+        'filetype',
+        'status',
+        'uploader',
+        'has_original',
+        'has_card',
+        'has_thumbnail'
+    ];
+    
+    
     public function guides() : BelongsToMany
     {
         return $this->belongsToMany(Guide::class);
