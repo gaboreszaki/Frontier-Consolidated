@@ -1,60 +1,127 @@
-<div class="col-auto col-md-3 col-xl-2 px-0 border-end shadow" >
-    <div class="d-flex flex-column align-items-center align-items-sm-start  p-3 text-white min-vh-100 bg-dark">
-        <a href="/" class="navbar-brand d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
-            <img src="{{ asset('images/frcn_main_logo.png') }}"  height="24" class="mx-3" alt="FRCN Logo">
-            <span class="fs-5 d-none d-sm-inline">FRCN Site admin</span>
-        </a>
-        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-            <li class="nav-item">
-                <a href="#" class="nav-link disabled">
-                    Dashboard
-                </a>
-            </li>
 
+    <div class="flex-shrink-0 p-3 admin-site-nav shadow" style="width: 280px;">
+        <a href="/" class="navbar-brand d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
+            <img src="{{ asset('images/frcn_main_logo.png') }}" height="24" class="mx-3" alt="FRCN Logo">
+            <span class="fs-5 d-none d-sm-inline">FRCN Site admin</span>
+
+        </a>
+
+
+
+
+
+
+        <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#staticPageItems" role="button" aria-expanded="false" aria-controls="staticPageItems">Static Pages</a>
-                <div class="collapse multi-collapse" id="staticPageItems">
-                    <ul>
-                        <li class="nav-item "><a href="{{route('admin.community.index')}}" class="nav-link">Community</a></li>
-                        <li class="nav-item "><a href="#" class="nav-link disabled">Organisation</a></li>
+                <button class="nav-link collapsed" data-bs-toggle="collapse" data-bs-target="#activities" aria-expanded="true">
+                    Activities
+                </button>
+                <div class="collapse show multi-collapse" id="activities">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li class="nav-item"><a href="{{route('admin.reports.index')}}" class="nav-link">Reports</a></li>
+                        <li class="nav-item "><a href="#" class="nav-link disabled">Regular Events</a></li>
+
                     </ul>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.community.index')}}">Community</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.community.index')}}" aria-disabled="true">Community</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+
+
+
+
+
+
+
+
+
+
+
+        <ul class="navbar">
+            <li class="mb-1">
 
             </li>
 
-            <li>
-                <a href="{{route('admin.news.index')}}" class="nav-link">News & Announcements</a>
-            </li>
 
-            <li>
-                <a class="nav-link" data-bs-toggle="collapse" href="#activities" role="button" aria-expanded="false" aria-controls="activities">Activities</a>
-                <div class="collapse multi-collapse" id="activities">
-                    <ul>
-                        <li class="nav-item"><a href="{{route('admin.reports.index')}}" class="nav-link">Event Reports</a></li>
+            <li class="nav-item"><a href="{{route('admin.community.index')}}" class="nav-link">Community</a></li>
+
+
+        <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#staticPageItems" aria-expanded="true">
+                    Pages &amp; Content
+                </button>
+                <div class="collapse show multi-collapse" id="staticPageItems">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li class="nav-item"><a href="{{route('admin.community.index')}}" class="nav-link">Community</a></li>
+                        <li class="nav-item text-muted"><a href="#" class="nav-link disabled">Organisation</a></li>
+
+                        <li class="nav-item"><a href="{{route('admin.news.index')}}" class="nav-link">News</a></li>
+                        <li class="nav-item"><a href="{{route('admin.reports.index')}}" class="nav-link">Reports</a></li>
                         <li class="nav-item "><a href="#" class="nav-link disabled">Regular Events</a></li>
+
+                    </ul>
+                </div>
+            </li>
+
+
+
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#staticPageItems" aria-expanded="true">
+                    Info Services
+                </button>
+                <div class="collapse show multi-collapse" id="staticPageItems">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li class="nav-item"><a href="{{route('admin.news.index')}}" class="nav-link">News</a></li>
+                        <li class="nav-item"><a href="{{route('admin.reports.index')}}" class="nav-link">Reports</a></li>
+                        <li class="nav-item "><a href="#" class="nav-link disabled">Regular Events</a></li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#admin_items" aria-expanded="false">
+                    Admin
+                </button>
+                <div class="collapse" id="admin_items">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li class="nav-item"><a href="#" class="nav-link disabled">Users</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link disabled">Files</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="border-top my-3"></li>
+
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                    Account
+                </button>
+                <div class="collapse" id="account-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>
+                        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
                     </ul>
                 </div>
             </li>
         </ul>
-        <hr>
-        <div class="dropdown pb-4">
-            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                <span class="d-none d-sm-inline mx-1">{{$user->name}}</span>
-
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-
-            </ul>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-        </div>
     </div>
-</div>
+
+
+
+
+
+
+
+
+
+
