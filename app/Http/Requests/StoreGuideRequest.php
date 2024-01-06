@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class UpdateCommunityRequest extends FormRequest
+class StoreGuideRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +23,11 @@ class UpdateCommunityRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'layout' => 'required|string',
-            'title' => 'required|string|max:255|min:3',
-            'content' => 'required|string|max:450|min:3',
-//            'background_image' => 'string',
-            'is_pinned' => 'boolean',
-            'priority' => 'integer|max:100',
+            'category_id' => "required|integer",
+            'title' => "required|string|min:3|max:200",
+            'description' => "string|min:3|max:15000",
+            'video_url' => "url:http,https"
+            
         ];
     }
 }
