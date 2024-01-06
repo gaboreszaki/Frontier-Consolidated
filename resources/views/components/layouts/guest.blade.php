@@ -9,6 +9,12 @@
 
     <link href="{{ asset('app.css') }}" rel="stylesheet">
 
+{{-- todo: replace animate css with local version --}}
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="svg-bg hex">

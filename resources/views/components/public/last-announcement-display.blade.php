@@ -1,5 +1,5 @@
 @if($lastAnnouncement )
-    <div class="alert alert-primary alert-dismissible fade show rounded-0" role="alert">
+    <div class="alert alert-info alert-dismissible fade show rounded-0" role="alert">
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         <h4 class="alert-heading">{{$lastAnnouncement->title}}</h4>
         <p>{!!  $lastAnnouncement->content !!}</p>

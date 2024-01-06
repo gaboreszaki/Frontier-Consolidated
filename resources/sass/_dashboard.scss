@@ -39,10 +39,10 @@
         border-radius: 0;
 
         &:hover {
-          border-left: 2px $primary solid;
+          border-left: 2px $info solid;
 
           i {
-            color: $primary;
+            color: $info;
           }
         }
       }
@@ -57,8 +57,8 @@
 
         &:hover {
           color: $white;
-          border-left-color: $primary;
-          background-color: rgba(13, 110, 253, 0.3);
+          border-left-color: $info;
+          background-color: rgba($primary, 0.8);
         }
       }
 

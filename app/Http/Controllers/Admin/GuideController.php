@@ -54,7 +54,7 @@ class GuideController extends Controller
      */
     public function show(Guide $guide)
     {
-        //
+        return view('admin.guides.show', compact('guide'));
     }
 
     /**

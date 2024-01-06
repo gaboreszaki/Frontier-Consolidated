@@ -21,63 +21,44 @@
 }
 
 /// Main menu
-
 .main-menu {
-
   .item {
-    //border: 1px solid red;
-    //box-shadow: 0px 0px 5px rgba(white, 0.5);
-    //border: 2px solid #1f1f1f;
-    &:hover{
-      box-shadow: 0 0 5px rgba($primary, 0.5);
-    }
-
     img {
       width: 100%;
       display: inline;
-    }
-    .label{
 
-      background: rgba(black,0.6);
-      padding: 5px 10px;
-      font-size: 1.4rem;
+      filter: grayscale(0%);
+
+    }
+
+    .label {
+      background: rgba($black, 0.6);
+      padding: 5px 10px 5px 15px;
+      font-size: 1.2rem;
       font-variant: all-small-caps;
       position: relative;
-      top:100%;
-      margin-top: -46px;
+      top: 100%;
+      margin-top: -41px;
+    }
+
+    &:hover {
+
+      img {
+        animation: bounce; /* referring directly to the animation's @keyframe declaration */
+
+        animation-duration: 0.5s;
+        filter: grayscale(100%);
+      }
+
+      .label {
+        padding: 5px 10px;
+        border-left: $white solid 5px;
+        color: $white;
+        background: rgba($primary, 0.6);
+      }
     }
   }
 }
-
-
-//.main-menu {
-//
-//  .item {
-//
-//    box-shadow: 3px 3px 5px rgba($secondary, .6);
-//    border: #1f1f1f 1px solid;
-//
-//
-//  }
-//
-//  .item:hover {
-//    box-shadow: 3px 3px 5px rgba($primary, .6);
-//  }
-//
-//  .label {
-//
-//    padding: 10px 10px 5px;
-//    font-size: 1.1rem;
-//
-//    height: 40px;
-//    top: 100%;
-//    margin-top: -40px;
-//
-//    a {
-//      text-transform: uppercase;
-//    }
-//  }
-//}
 
 
 /// overwrite carousel buttons position
@@ -85,25 +66,5 @@
   width: 7% !important;
 }
 
-
-
-///// Admin page Nav:
-//.nav-scroller {
-//  position: relative;
-//  z-index: 2;
-//  height: 2.75rem;
-//  overflow-y: hidden;
-//}
-//
-//.nav-scroller .nav {
-//  display: flex;
-//  flex-wrap: nowrap;
-//  padding-bottom: 1rem;
-//  margin-top: -1px;
-//  overflow-x: auto;
-//  text-align: center;
-//  white-space: nowrap;
-//  -webkit-overflow-scrolling: touch;
-//}
 
 
