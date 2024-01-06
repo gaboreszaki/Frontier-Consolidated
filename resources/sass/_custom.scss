@@ -29,7 +29,7 @@
     //box-shadow: 0px 0px 5px rgba(white, 0.5);
     //border: 2px solid #1f1f1f;
     &:hover{
-      box-shadow: 0px 0px 5px rgba($primary, 0.5);
+      box-shadow: 0 0 5px rgba($primary, 0.5);
     }
 
     img {
@@ -80,10 +80,30 @@
 //}
 
 
-/// overwrite carsouel buttons position
+/// overwrite carousel buttons position
 .carousel-control-prev, .carousel-control-next {
   width: 7% !important;
 }
 
+
+
+///// Admin page Nav:
+//.nav-scroller {
+//  position: relative;
+//  z-index: 2;
+//  height: 2.75rem;
+//  overflow-y: hidden;
+//}
+//
+//.nav-scroller .nav {
+//  display: flex;
+//  flex-wrap: nowrap;
+//  padding-bottom: 1rem;
+//  margin-top: -1px;
+//  overflow-x: auto;
+//  text-align: center;
+//  white-space: nowrap;
+//  -webkit-overflow-scrolling: touch;
+//}
 
 

@@ -19,15 +19,8 @@ class CommunityFactory extends Factory
     public function definition(): array
     {
         
-        $layouts = [
-            'centered',
-            'center-left',
-            'center-right',
-            'top-left',
-            'top-right',
-            'bottom-left',
-            'bottom-right'
-        ] ;
+        $layouts = config('static_layouts.layouts') ;
+//        dd($layouts);
         $layout = fake()->randomElement($layouts);
         
         return [
