@@ -9,20 +9,18 @@
 
     <link href="{{ asset('app.css') }}" rel="stylesheet">
 
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <x-admin.tinymce-config></x-admin.tinymce-config>
 </head>
-<body>
-<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <x-admin.site-nav />
-        <div class="col py-3">
-            {{ $slot }}
-        </div>
+<body class="admin-site">
+<section class="nav shadow-sm">
+    <x-admin.site-nav/>
+</section>
+<main class="content">
+    <div class="container">
+        {{ $slot }}
     </div>
-</div>
-
-
-
+</main>
 </body>
 </html>
