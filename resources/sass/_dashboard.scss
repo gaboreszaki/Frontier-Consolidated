@@ -1,0 +1,81 @@
+.admin-site {
+
+
+  section.nav {
+    position: fixed;
+    display: block;
+    left: 0;
+    top: 0;
+    min-width: 280px;
+    width: 10%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+
+    background: linear-gradient(45deg, rgba(9, 9, 9, 0.9) 0%, rgba(9, 9, 9, 0.8) 35%, rgba(9, 9, 9, 0.1) 100%);
+    //border-right: 1px solid rgba(9, 9, 9, 0.1);
+
+
+    .nav-item {
+      margin-bottom: 5px;
+
+      .nav-link {
+        color: white;
+        text-transform: capitalize;
+
+        &.disabled {
+          color: $gray-700 !important;
+        }
+      }
+
+      button {
+        margin-left: 3px;
+      }
+
+      a, button {
+        color: $white;
+        border-radius: 0;
+
+        &:hover {
+          border-left: 2px $primary solid;
+
+          i {
+            color: $primary;
+          }
+        }
+      }
+
+    }
+
+    .collapse .nav-item {
+      margin-left: 1rem;
+
+      a, button {
+        border-left: 2px $secondary solid;
+
+        &:hover {
+          color: $white;
+          border-left-color: $primary;
+          background-color: rgba(13, 110, 253, 0.3);
+        }
+      }
+
+    }
+
+
+  }
+
+  main.content {
+    margin-left: 280px;
+    padding: 2rem 1rem;
+
+  }
+
+
+}
+
+
+
+
