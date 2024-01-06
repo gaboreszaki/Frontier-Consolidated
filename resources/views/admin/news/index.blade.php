@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-12">
             <div class="float-end">
-                <a href="/admin/news/create" class="btn btn-primary">Create News or announcement</a>
+                <a href="/admin/news/create" class="btn btn-primary">New</a>
             </div>
-            <h2>News Index page</h2>
+            <h2>News</h2>
         </div>
     </div>
     <hr>
@@ -16,7 +16,7 @@
                         <div class="card-title">
                             <div class="float-end">
                                 <a href="{{route('admin.news.show', ['news' => $item->id])}}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                <a href="{{route('admin.news.edit', ['news' => $item->id])}}" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                                <a href="{{route('admin.news.edit', ['news' => $item->id])}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil"></i></a>
                             </div>
                             <h5>{{$item->title}}</h5>
                         </div>

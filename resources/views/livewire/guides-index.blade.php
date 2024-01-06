@@ -50,8 +50,8 @@
                 <div class="card-body ">
                     <div class="card-title">
                         <div class="float-end">
-                            <a href="{{route('admin.guides.show', ['guide' => $item->id])}}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                            <a href="{{route('admin.guides.edit', ['guide' => $item->id])}}" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                            <a href="{{route('admin.guides.show', ['guide' => $item->id])}}" class="btn btn-primary btn-sm "><i class="bi bi-eye "></i></a>
+                            <a href="{{route('admin.guides.edit', ['guide' => $item->id])}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil"></i></a>
                         </div>
                         <h5>{{$item->title}}</h5>
                     </div>

@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-12">
             <div class="float-end">
-                <a href="{{route('admin.community.create')}}" class="btn btn-primary">Create entry</a>
+                <a href="{{route('admin.community.create')}}" class="btn btn-primary">New</a>
             </div>
-            <h2>Community Page</h2>
+            <h2>Community</h2>
         </div>
     </div>
     <hr>
@@ -27,10 +27,10 @@
                         <div class="card-title">
                             <div class="float-end">
 
-                                <span class="badge bg-secondary">priority: {{$community->priority}} </span>
+                                <span class="badge bg-primary text-white-50 me-3 ">priority: {{$community->priority}} </span>
 
                                 <a href="{{route('admin.community.show', $community)}}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                <a href="{{route('admin.community.edit', $community)}}" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                                <a href="{{route('admin.community.edit', $community)}}" class="btn btn-primary btn-sm"><i class="bi bi-pencil"></i></a>
                             </div>
 
                             <h5>{{$community->title}}</h5>
